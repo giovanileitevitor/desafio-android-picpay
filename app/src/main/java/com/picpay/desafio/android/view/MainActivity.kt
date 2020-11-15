@@ -34,6 +34,11 @@ class MainActivity : BaseActivity() {
         viewModel.getUsers()
     }
 
+    override fun onRestart() {
+        super.onRestart()
+        viewModel.getUsers()
+    }
+
     private fun setupToolbar(){
         setSupportActionBar(toolbar)
     }
