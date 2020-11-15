@@ -14,4 +14,13 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.OrangeAccent">
+        <item name="colorAccent">@color/background_green_pic_pay</item>
+    </style>
+
 </resources>

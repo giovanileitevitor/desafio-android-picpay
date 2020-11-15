@@ -1,6 +1,13 @@
 <resources>
-    <string name="app_name">PicPay</string>
+    <string name="app_name">PicPay App Teste</string>
     <string name="title">Contatos</string>
     <string name="error">Ocorreu um erro. Tente novamente.</string>
+
+    <!-- SplashActivity String resources   -->
+    <string name="txt_from">From:</string>
+    <string name="txt_designed_by">Designed by Giovani Leite</string>
+
+    <!-- MainActivity String resources   -->
+    <string name="paginaAtual">Página atual : %1$s </string>
 
 </resources>

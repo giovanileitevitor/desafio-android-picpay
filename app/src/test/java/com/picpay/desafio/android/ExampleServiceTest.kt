@@ -2,6 +2,7 @@ package com.picpay.desafio.android
 
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
+import br.applabbs.data.model.response.User
 import junit.framework.Assert.assertEquals
 import org.junit.Test
 import retrofit2.Call
