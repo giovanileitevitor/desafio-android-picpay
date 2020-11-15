@@ -1,5 +1,8 @@
 package br.applabbs.data.entity
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
 
 data class User(
     var img: String?,

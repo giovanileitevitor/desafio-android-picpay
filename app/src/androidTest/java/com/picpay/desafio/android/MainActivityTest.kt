@@ -17,14 +17,12 @@ import org.junit.Test
 
 class MainActivityTest {
 
-    private val server = MockWebServer()
 
-    private val context = InstrumentationRegistry.getInstrumentation().targetContext
 
     @Test
     fun shouldDisplayTitle() {
         launchActivity<MainActivity>().apply {
-            val expectedTitle = context.getString(R.string.title)
+            val expectedTitle = context.getString(R.string.app_name)
 
             moveToState(Lifecycle.State.RESUMED)
 

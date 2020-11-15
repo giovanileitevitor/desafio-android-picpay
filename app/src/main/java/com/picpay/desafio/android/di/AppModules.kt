@@ -1,5 +1,10 @@
 package com.picpay.desafio.android.di
 
+import br.applabbs.data.di.DataModule.userResponseToUser
+import br.applabbs.data.repository.UserRemoteDataSource
+import br.applabbs.data.repository.UserRemoteDataSourceImpl
+import br.applabbs.data.repository.UserRepository
+import br.applabbs.data.repository.UserRepositoryImpl
 import br.applabbs.data.service.PicPayEndpointService
 import br.applabbs.infrastructure.net.Network
 import br.applabbs.infrastructure.net.NetworkImpl
@@ -13,13 +18,12 @@ import org.koin.dsl.module
 
 object AppModules {
 
-    private const val abvService = "AbvService"
+    const val abvService = "AbvService"
 
     val serviceModules = module {
         single(named(abvService)) { makeService<PicPayEndpointService>(BuildConfig.BASE_URL) }
         viewModel { SplashViewModel() }
-        viewModel { MainViewModel(get(), get()) }
-        //viewModel { DetailsViewModel() }
+        viewModel { MainViewModel(get()) }
     }
 
     val netModules = module {
@@ -27,6 +31,17 @@ object AppModules {
     }
 
     val dataSourceModules = module {
+        single<UserRemoteDataSource> {
+            UserRemoteDataSourceImpl(
+                get(named(abvService)),
+                get(named(userResponseToUser))
+            )
+        }
 
+        single<UserRepository> {
+            UserRepositoryImpl(
+                get()
+            )
+        }
     }
 }

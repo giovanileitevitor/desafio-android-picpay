@@ -10,7 +10,6 @@ import br.applabbs.infrastructure.net.Network
 import br.applabbs.infrastructure.net.SuccessResults
 
 open class MainViewModel(
-    network: Network,
     private val userRepository: UserRepository
 ): BaseViewModel() {
 

@@ -30,18 +30,12 @@ class MainActivity : BaseActivity() {
         setupToolbar()
         setupRecycler()
         setupActions()
-        viewModel.getUsers()
-    }
-
-    override fun onRestart() {
-        super.onRestart()
+        setupListeners()
         viewModel.getUsers()
     }
 
     private fun setupToolbar(){
         setSupportActionBar(toolbar)
-//        supportActionBar?.title = getString(R.string.main_repositories_toolbar_title, "?")
-//        txt_total_repositories.text = getString(R.string.paginaAtual, position.toString())
     }
 
     private fun setupRecycler() {
@@ -60,7 +54,7 @@ class MainActivity : BaseActivity() {
     private fun showError(error: Boolean){
         if (error) {
             progress_bar.visibility = View.VISIBLE
-            Toast.makeText(this, "Falha na requisição", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.error), Toast.LENGTH_SHORT).show()
         } else {
             progress_bar.visibility = View.GONE
         }
@@ -69,12 +63,14 @@ class MainActivity : BaseActivity() {
     private fun processLoading(loading: Boolean){
         if (loading) {
             progress_bar.visibility = View.VISIBLE
+            txt_total_itens.text = " - "
         } else {
             progress_bar.visibility = View.GONE
         }
     }
 
     private fun processRepos(users : List<User>){
+        txt_total_itens.text = getString(R.string.total_users, users.size.toString() ?: 0)
 
         usersListAdapter = UsersListAdapter(
             this, users, Glide.with(this)
@@ -86,6 +82,16 @@ class MainActivity : BaseActivity() {
     }
 
     private fun getOnClickItemDetails(users: User){
-        Toast.makeText(this, "Item clicked: ${users.name}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.txt_item_clicked, users.name), Toast.LENGTH_SHORT).show()
+    }
+
+    private fun setupListeners(){
+        btn_next.setOnClickListener {
+            Toast.makeText(this, "Paginação Desabilitada", Toast.LENGTH_SHORT).show()
+        }
+
+        btn_previous.setOnClickListener {
+            Toast.makeText(this, "Paginação Desabilitada", Toast.LENGTH_SHORT).show()
+        }
     }
 }

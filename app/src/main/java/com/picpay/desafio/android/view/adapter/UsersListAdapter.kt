@@ -38,6 +38,14 @@ class UsersListAdapter(
         var photo: ImageView = itemView.findViewById(R.id.picture)
         var username: TextView = itemView.findViewById(R.id.username)
         var name: TextView = itemView.findViewById(R.id.name)
+
+        init{
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                val item = data[position]
+                itemListener.invoke(item)
+            }
+        }
     }
 
     private fun processDefault(holder: RecyclerView.ViewHolder, position: Int) {
@@ -48,7 +56,6 @@ class UsersListAdapter(
         mGlide.load(item.img)
             .placeholder(R.drawable.ic_round_account_circle)
             .into(defaultVH.photo)
-
 
         defaultVH.username.text = item.username
         defaultVH.name.text = item.name

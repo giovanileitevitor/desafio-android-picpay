@@ -1,6 +1,6 @@
 <resources>
+    <!--    Global String resources-->
     <string name="app_name">PicPay App Teste</string>
-    <string name="title">Contatos</string>
     <string name="error">Ocorreu um erro. Tente novamente.</string>
 
     <!-- SplashActivity String resources   -->
@@ -8,6 +8,7 @@
     <string name="txt_designed_by">Designed by Giovani Leite</string>
 
     <!-- MainActivity String resources   -->
-    <string name="paginaAtual">Página atual : %1$s </string>
+    <string name="total_users">Total: %1$s Usuários </string>
+    <string name="txt_item_clicked">Nome: %1$s </string>
 
 </resources>
