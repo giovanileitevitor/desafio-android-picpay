@@ -58,7 +58,7 @@ class MainActivity : BaseActivity() {
 
     private fun showError(error: Boolean){
         if (error) {
-            progress_bar.visibility = View.VISIBLE
+            progress_bar.visibility = View.GONE
             Toast.makeText(this, getString(R.string.error), Toast.LENGTH_SHORT).show()
         } else {
             progress_bar.visibility = View.GONE
@@ -68,9 +68,11 @@ class MainActivity : BaseActivity() {
     private fun processLoading(loading: Boolean){
         if (loading) {
             progress_bar.visibility = View.VISIBLE
+            recycler_view_repositories.visibility = View.INVISIBLE
             txt_total_itens.text = " - "
         } else {
             progress_bar.visibility = View.GONE
+            recycler_view_repositories.visibility = View.VISIBLE
         }
     }
 
