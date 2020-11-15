@@ -22,7 +22,7 @@ android {
             minifyEnabled false
             shrinkResources false
             debuggable true
-            buildConfigField "String", "BASE_URL", "\"http://careers.picpay.com/tests/mobdev/\""
+            buildConfigField "String", "BASE_URL", "\"https://private-f4da9b-vistoriadorlogin.apiary-mock.com/\""
         }
 
         release {
