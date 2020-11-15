@@ -75,7 +75,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun processRepos(users : List<User>){
-        txt_total_itens.text = getString(R.string.total_users, users.size.toString() ?: 0)
+        txt_total_itens.text = getString(R.string.total_users, users.size.toString())
 
         usersListAdapter = UsersListAdapter(
             this, users, Glide.with(this)
@@ -92,11 +92,11 @@ class MainActivity : BaseActivity() {
 
     private fun setupListeners(){
         btn_next.setOnClickListener {
-            Toast.makeText(this, "Paginação Desabilitada", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.btn_paginacao), Toast.LENGTH_SHORT).show()
         }
 
         btn_previous.setOnClickListener {
-            Toast.makeText(this, "Paginação Desabilitada", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.btn_paginacao), Toast.LENGTH_SHORT).show()
         }
     }
 }

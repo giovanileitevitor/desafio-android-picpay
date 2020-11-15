@@ -10,5 +10,6 @@
     <!-- MainActivity String resources   -->
     <string name="total_users">Total: %1$s Usuários </string>
     <string name="txt_item_clicked">Nome: %1$s </string>
+    <string name="btn_paginacao">Paginação Desabilitada</string>
 
 </resources>
