@@ -1,11 +1,10 @@
-package com.picpay.desafio.android
+package com.picpay.desafio.android.oldFiles
 
 import br.applabbs.data.entity.User
-import br.applabbs.data.model.response.User
-import br.applabbs.data.service.PicPayEndpointService
+import br.applabbs.data.service.PicPayEndpointServiceTest
 
 class ExampleService(
-    private val service: PicPayEndpointService
+    private val service: PicPayEndpointServiceTest
 ) {
 
     fun example(): List<User> {
